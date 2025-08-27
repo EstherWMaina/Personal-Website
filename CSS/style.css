@@ -1,0 +1,280 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #ffffff;
+    color: #002f6c;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    color: #002f6c;
+    margin-top: 0;
+  }
+  
+  a {
+    color: #0057b8;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: #0057b8;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .btn:hover {
+    background: #004a96;
+  }
+  
+  /* =====================
+     NAVIGATION
+  ===================== */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #002f6c;
+    padding: 10px 20px;
+  }
+  
+  nav .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-left: 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+  }
+  
+  nav ul li a.active {
+    text-decoration: underline;
+  }
+  
+  /* =====================
+     HERO SECTION
+  ===================== */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #e6f0ff;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  
+  .hero-left {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .profile-img {
+    width: 250px;
+    border-radius: 10px;
+  }
+  
+  .hero-right {
+    flex: 2;
+  }
+  
+  /* =====================
+     ABOUT SECTION
+  ===================== 
+  .about {
+    background: #f9fbff;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  */
+  /* =====================
+     SKILLS CAROUSEL
+  ===================== */
+  .skills {
+    background: #f4f8ff;
+    border-radius: 5px;
+  }
+  
+  .carousel {
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    animation: scroll 15s linear infinite;
+  }
+  
+  .skill {
+    min-width: 200px;
+    background: #e6f0ff;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  /* =====================
+     PROJECTS (Home & Projects page)
+  ===================== */
+  .projects-preview,
+  .projects-page {
+    background: #ffffff;
+  }
+  
+  .project-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    background: #f9fbff;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .project-card img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  
+  .project-card h3 {
+    margin: 0 0 5px;
+  }
+  
+  .project-card p {
+    margin: 0;
+  }
+  
+  /* =====================
+     TWO-COLUMN LAYOUT (Projects Page)
+  ===================== */
+  .two-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .left-column {
+    flex: 2;
+  }
+  
+  .right-column {
+    flex: 1;
+    background: #f4f8ff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .right-column ul {
+    padding-left: 20px;
+  }
+  
+  /* =====================
+     FOOTER
+  ===================== */
+  footer {
+    background: #002f6c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer a {
+    color: #87cefa;
+  }
+  
+  /* =====================
+     RESPONSIVE DESIGN
+  ===================== */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .two-column {
+      flex-direction: column;
+    }
+  
+    .project-card {
+      flex-direction: column;
+      text-align: left;
+    }
+  
+    .project-card img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  /* Globe background for Skills section */
+  .skills {
+    position: relative;
+    padding: 40px 20px;
+    border-radius: 5px;
+    color: #002f6c;
+    overflow: hidden;
+  }
+  
+  .skills::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../images/globe.gif') center/contain no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+  }
+  
+  .projects-preview {
+    position: relative;
+    padding: 40px 20px;
+    border-radius: 5px;
+    color: #002f6c;
+    overflow: hidden;
+  }
+  
+  .projects-preview::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('../images/globe.gif') center/contain no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+  }
+  
