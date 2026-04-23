@@ -175,4 +175,4 @@ For questions about customizing this portfolio or need technical help, refer to:
 
 **Portfolio Website for**: Esther Wanjiku Maina | Senior Cartographer & Geospatial Analyst
 
-**Contact**: esmainaa8@gmail.com | +254 718 624 359 | Nairobi, Kenya
+**Contact**: mainaher34@gmail.com | +254 718 624 359 | Nairobi, Kenya
