@@ -15,6 +15,3 @@ next.user-config.*
 node_modules/
 .next/
 .DS_Store
-
-# Build output (don't ignore - needed for deployment)
-# out/ should NOT be in gitignore for gh-pages deployment
