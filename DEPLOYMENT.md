@@ -25,49 +25,55 @@
 1. Go to your repository on GitHub
 2. Navigate to **Settings** → **Pages**
 3. Under "Build and deployment":
-   - **Source**: Select "GitHub Actions"
-   - This will automatically use the deploy workflow
+   - **Source**: Select "Deploy from a branch"
+   - **Branch**: Select `gh-pages` (or wait for the first workflow run to create it)
+   - Wait for the page to save and refresh
+4. After the first deployment workflow runs successfully, verify:
+   - Go to **Settings** → **Pages** again
+   - You should see "Your site is live at: https://yourusername.github.io/your-repo-name/"
 
-## Step 3: Automatic Deployment
+## Step 3: Push Your Code and Trigger Deployment
 
-The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically:
-- Build the project when you push to `main` or `master` branch
-- Export it as static HTML
-- Deploy to GitHub Pages
-
-Simply push your changes:
-```bash
-git add .
-git commit -m "Update portfolio content"
-git push
-```
-
-The workflow will run automatically and deploy your site to `https://yourusername.github.io/your-repo-name/`
-
-## Step 4: Configure Base Path (If Needed)
-
-If your repository name is not `yourusername.github.io`, you need to set the base path:
-
-1. Set the environment variable before building:
+1. Commit and push your project to GitHub:
    ```bash
-   export NEXT_PUBLIC_BASE_PATH=/your-repo-name
+   git add .
+   git commit -m "Initial portfolio deployment"
+   git push origin main
    ```
 
-2. Or update the GitHub Actions workflow to include this in the build step:
-   ```yaml
-   - name: Build
-     env:
-       NEXT_PUBLIC_BASE_PATH: /your-repo-name
-     run: npm run build
+2. The GitHub Actions workflow will automatically:
+   - Install dependencies
+   - Build the Next.js project
+   - Export it as static HTML to the `out/` folder
+   - Deploy the `out/` folder to the `gh-pages` branch
+
+3. Go to your repository → **Actions** tab to monitor the deployment
+4. Once the workflow completes (✓ mark), the site will be live at:
    ```
+   https://yourusername.github.io/your-repo-name/
+   ```
+
+## Step 4: Verify GitHub Pages Settings
+
+After the first deployment:
+1. Go to **Settings** → **Pages**
+2. Confirm that:
+   - **Source** is set to "Deploy from a branch"
+   - **Branch** is set to `gh-pages` and `/ (root)`
+   - Your site URL is displayed (e.g., "Your site is live at https://...")
+
+If the branch doesn't appear, manually select it from the dropdown after the first workflow runs.
 
 ## Monitoring Deployment
 
 1. Go to your repository
 2. Click the **Actions** tab
-3. You'll see the deployment workflow running
-4. Once the workflow completes (shows ✓), your site is live!
-5. Access it at: `https://yourusername.github.io/your-repo-name/`
+3. You'll see the "Deploy to GitHub Pages" workflow running
+4. Once it completes (shows ✓), your site is deployed
+5. Click on the workflow run to see detailed logs
+6. Your site will be live at: `https://yourusername.github.io/your-repo-name/`
+
+**Note:** The first deployment can take 2-3 minutes to appear on GitHub Pages.
 
 ## Troubleshooting
 
