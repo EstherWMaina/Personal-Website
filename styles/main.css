@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Esther Wanjiku Maina — Portfolio
+   Shared stylesheet for index.html and about.html
+   Tailwind CSS (CDN, loaded per-page) handles layout/spacing utilities.
+   Everything below is custom: color tokens, fonts, textures, animation.
+   ========================================================================== */
+
+:root{
+    --bg:#0a0f1a;
+    --surface:#0f1728;
+    --surface-2:#141f35;
+    --line:rgba(140,153,179,0.18);
+    --line-soft:rgba(140,153,179,0.10);
+    --text:#e7ebf3;
+    --text-dim:#8c99b3;
+    --veg:#7cb36b;      /* vegetation / NDVI green   */
+    --veg-dim:rgba(124,179,107,0.14);
+    --elev:#d6a13c;     /* elevation / contour amber */
+    --elev-dim:rgba(214,161,60,0.14);
+    --water:#52b8cc;    /* SAR / water-body cyan     */
+    --water-dim:rgba(82,184,204,0.14);
+  }
+  *{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+  }
+  h1,h2,h3,.font-display{ font-family:'Space Grotesk',system-ui,sans-serif; }
+  .font-mono{ font-family:'IBM Plex Mono',ui-monospace,monospace; }
+
+  section{ scroll-margin-top:88px; }
+
+  ::selection{ background:var(--veg); color:var(--bg); }
+
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--veg); outline-offset:3px; border-radius:2px;
+  }
+
+  /* ---- background textures ---- */
+  .grid-overlay{
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:44px 44px;
+  }
+  .contours{
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      repeating-radial-gradient(circle at 12% 20%, transparent 0 22px, rgba(124,179,107,0.10) 23px, transparent 24px),
+      repeating-radial-gradient(circle at 88% 12%, transparent 0 28px, rgba(82,184,204,0.09) 29px, transparent 30px),
+      repeating-radial-gradient(circle at 75% 85%, transparent 0 24px, rgba(214,161,60,0.09) 25px, transparent 26px),
+      repeating-radial-gradient(circle at 20% 90%, transparent 0 34px, rgba(124,179,107,0.06) 35px, transparent 36px);
+  }
+  .scanline{
+    position:absolute; left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(124,179,107,0.55), transparent);
+    animation:scan 9s linear infinite;
+  }
+  @keyframes scan{
+    0%{ top:-2%; opacity:0; }
+    8%{ opacity:1; }
+    92%{ opacity:1; }
+    100%{ top:102%; opacity:0; }
+  }
+
+  /* ---- reveal on scroll ---- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+    .scanline{ display:none; }
+  }
+
+  /* ---- nav ---- */
+  #site-nav{
+    background:rgba(10,15,26,0.7);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  #site-nav a.nav-link{ color:var(--text-dim); transition:color .2s ease; }
+  #site-nav a.nav-link:hover, #site-nav a.nav-link.active{ color:var(--text); }
+
+  /* ---- eyebrow ---- */
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; letter-spacing:.14em; }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:2px; display:inline-block; }
+
+  /* ---- buttons ---- */
+  .btn-primary{
+    background:var(--veg); color:#0a0f1a; font-weight:600;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    box-shadow:0 0 0 0 rgba(124,179,107,0.0);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(124,179,107,0.45); }
+  .btn-ghost{
+    border:1px solid var(--line); color:var(--text);
+    transition:border-color .18s ease, background .18s ease, transform .18s ease;
+  }
+  .btn-ghost:hover{ border-color:var(--veg); background:var(--surface-2); transform:translateY(-2px); }
+
+  /* ---- image placeholders / photo frames ----
+     Each frame starts as a dashed placeholder. Drop a real file at the referenced
+     assets/images/... path and it swaps in automatically — no HTML edits needed.
+     A photo gets a faint EO-style colour cast by default that clears on hover,
+     like a false-colour layer peeling back to true colour. */
+  .img-placeholder{
+    border:1.5px dashed var(--line);
+    background-color:var(--surface);
+    background-image:repeating-linear-gradient(135deg, rgba(140,153,179,0.07) 0 2px, transparent 2px 11px);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    color:var(--text-dim);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .img-placeholder:hover{ border-color:var(--water); color:var(--text); }
+
+  .img-placeholder .ph-photo{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0; filter:saturate(.8) contrast(1.03);
+    transition:opacity .5s ease, transform .6s ease, filter .5s ease;
+  }
+  .img-placeholder .ph-icon{ transition:opacity .25s ease; }
+  .img-placeholder.has-photo{ border-style:solid; border-color:var(--line); }
+  .img-placeholder.has-photo .ph-photo{ opacity:1; }
+  .img-placeholder.has-photo .ph-icon{ display:none; }
+  .img-placeholder.has-photo::after{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(155deg, rgba(82,184,204,0.20), rgba(124,179,107,0.12) 55%, transparent 100%);
+    mix-blend-mode:multiply; opacity:.6; transition:opacity .45s ease;
+  }
+  .card:hover .img-placeholder.has-photo .ph-photo,
+  .img-placeholder.has-photo:hover .ph-photo{ transform:scale(1.045); filter:saturate(1) contrast(1); }
+  .card:hover .img-placeholder.has-photo::after,
+  .img-placeholder.has-photo:hover::after{ opacity:.12; }
+
+  /* ---- subtle film-grain texture, keeps flat dark sections from looking gradient-flat ---- */
+  body::before{
+    content:''; position:fixed; inset:0; z-index:1; pointer-events:none;
+    opacity:.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---- cards ---- */
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform:translateY(-4px); border-color:var(--line); box-shadow:0 20px 40px -20px rgba(0,0,0,0.6); }
+
+  .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.05em;
+    border:1px solid var(--line); color:var(--text-dim); padding:.2rem .55rem; border-radius:999px;
+  }
+
+  /* ---- layer toggle checkboxes ---- */
+  input[type=checkbox].layer-toggle{
+    appearance:none; -webkit-appearance:none; width:18px; height:18px; flex-shrink:0;
+    border:1.5px solid var(--line); border-radius:5px; position:relative; cursor:pointer;
+    background:transparent; transition:background .15s ease, border-color .15s ease;
+  }
+  input[type=checkbox].layer-toggle:checked{ background:var(--layer-color, var(--veg)); border-color:var(--layer-color, var(--veg)); }
+  input[type=checkbox].layer-toggle:checked::after{
+    content:''; position:absolute; left:5px; top:1px; width:5px; height:9px;
+    border:solid #0a0f1a; border-width:0 2px 2px 0; transform:rotate(45deg);
+  }
+  .layer-card{ transition:opacity .25s ease, filter .25s ease; }
+  .layer-card.layer-off{ opacity:.38; filter:grayscale(.5); }
+
+  /* ---- timeline ---- */
+  .timeline{ position:relative; }
+  .timeline::before{
+    content:''; position:absolute; left:5px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(var(--veg), var(--water), var(--elev));
+    opacity:.4;
+  }
+  .timeline-node{ position:relative; padding-left:2.25rem; }
+  .timeline-node::before{
+    content:''; position:absolute; left:0; top:6px; width:12px; height:12px; border-radius:50%;
+    background:var(--node-color, var(--veg)); box-shadow:0 0 0 4px var(--bg);
+  }
+
+  /* ---- locator pulse: a small live-telemetry marker for the coordinate readout ---- */
+  .locator-pulse{ position:relative; display:inline-flex; width:8px; height:8px; }
+  .locator-pulse::before, .locator-pulse::after{
+    content:''; position:absolute; inset:0; border-radius:50%; background:var(--veg);
+  }
+  .locator-pulse::before{ animation:pulse-ring 2.6s cubic-bezier(.3,0,.5,1) infinite; }
+  .locator-pulse::after{ }
+  @keyframes pulse-ring{
+    0%{ transform:scale(1); opacity:.55; }
+    100%{ transform:scale(3.2); opacity:0; }
+  }
+
+  /* ---- misc ---- */
+  .clip-corner{ clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+  .hero-name{ font-size:clamp(2.4rem, 7vw, 5.2rem); line-height:1.02; }
+
+  @media (max-width:767px){
+    .timeline::before{ left:5px; }
+  }
