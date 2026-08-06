@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esther Wanjiku Maina — Geospatial Data Engineer</title>
+<meta name="description" content="Portfolio of Esther Wanjiku Maina, Geospatial Data Engineer &amp; Earth Observation Specialist. Mapping specifications, remote sensing and data quality protocols.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0f1a'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%237cb36b' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='16' fill='none' stroke='%237cb36b' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%237cb36b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-[var(--veg)] focus:text-[#0a0f1a] focus:px-3 focus:py-2 focus:rounded">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
+    <a href="#top" class="font-mono text-xs md:text-sm text-[var(--text-dim)] tracking-wide hover:text-[var(--text)] transition-colors flex items-center gap-2">
+      <span class="locator-pulse" aria-hidden="true"></span>
+      01°17'S&nbsp;36°49'E <span class="text-[var(--veg)]">·</span> NAIROBI, KE
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-mono text-xs tracking-wide uppercase">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html#about" class="nav-link">About</a>
+      <a href="about.html#skills" class="nav-link">Skills</a>
+      <a href="about.html#experience" class="nav-link">Experience</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="about.html#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#contact" class="hidden md:inline-block btn-primary font-mono text-xs uppercase tracking-wide px-4 py-2 rounded">Get in touch</a>
+    <button id="menu-btn" class="md:hidden text-[var(--text)]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-[var(--line)] bg-[var(--bg)] px-5 py-4 flex flex-col gap-4 font-mono text-sm uppercase tracking-wide">
+    <a href="about.html#about" class="nav-link">About</a>
+    <a href="about.html#skills" class="nav-link">Skills</a>
+    <a href="about.html#experience" class="nav-link">Experience</a>
+    <a href="#work" class="nav-link">Work</a>
+    <a href="about.html#education" class="nav-link">Education</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <div class="absolute inset-0 grid-overlay"></div>
+    <div class="contours"></div>
+    <div class="scanline"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg)]"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-5 md:px-8 py-24 w-full">
+      <p class="reveal eyebrow font-mono text-xs md:text-sm text-[var(--text-dim)] uppercase mb-6">
+        <span class="dot" style="background:var(--veg)"></span>
+        Geospatial Data Engineer &amp; Earth Observation Specialist
+      </p>
+
+      <h1 class="reveal font-display font-semibold hero-name text-[var(--text)]">
+        Esther Wanjiku<br><span class="text-[var(--veg)]">Maina</span>
+      </h1>
+
+      <p class="reveal max-w-2xl mt-6 text-base md:text-lg text-[var(--text-dim)] leading-relaxed">
+        I turn satellite imagery, spatial datasets and regulatory requirements into mapping specifications
+        that engineers, policymakers and field teams can actually build on — with 8+ years across GIS,
+        remote sensing and data quality protocol design.
+      </p>
+
+      <div class="reveal flex flex-wrap gap-4 mt-10">
+        <a href="#work" class="btn-primary px-6 py-3 rounded font-mono text-xs md:text-sm uppercase tracking-wide">View selected work</a>
+        <a href="about.html" class="btn-ghost px-6 py-3 rounded font-mono text-xs md:text-sm uppercase tracking-wide">More about me</a>
+        <a href="assets/resume/Esther-Maina-Resume.pdf" download class="btn-ghost px-6 py-3 rounded font-mono text-xs md:text-sm uppercase tracking-wide">
+          Download résumé <span class="text-[var(--text-dim)]">↓</span>
+        </a>
+        <!-- Drop your PDF at assets/resume/Esther-Maina-Resume.pdf and this link works immediately -->
+      </div>
+
+      <div class="reveal grid grid-cols-2 sm:grid-cols-4 gap-6 mt-16 max-w-2xl font-mono">
+        <div>
+          <p class="text-2xl md:text-3xl text-[var(--veg)] font-semibold">8+</p>
+          <p class="text-[11px] text-[var(--text-dim)] uppercase tracking-wide mt-1">Years in GIS &amp; EO</p>
+        </div>
+        <div>
+          <p class="text-2xl md:text-3xl text-[var(--water)] font-semibold">3</p>
+          <p class="text-[11px] text-[var(--text-dim)] uppercase tracking-wide mt-1">Degrees, 1 in progress</p>
+        </div>
+        <div>
+          <p class="text-2xl md:text-3xl text-[var(--elev)] font-semibold">4</p>
+          <p class="text-[11px] text-[var(--text-dim)] uppercase tracking-wide mt-1">Flagship KSA projects</p>
+        </div>
+        <div>
+          <p class="text-2xl md:text-3xl text-[var(--veg)] font-semibold">16+</p>
+          <p class="text-[11px] text-[var(--text-dim)] uppercase tracking-wide mt-1">Certifications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section id="work" class="relative py-24 md:py-32 border-t border-[var(--line)] bg-[var(--surface)]/40">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <p class="reveal eyebrow font-mono text-xs text-[var(--text-dim)] uppercase mb-3">
+        <span class="dot" style="background:var(--water)"></span> Selected Work
+      </p>
+      <h2 class="reveal font-display text-2xl md:text-3xl font-semibold mb-2">Flagship projects, Kenya Space Agency</h2>
+      <p class="reveal text-[var(--text-dim)] mb-14 max-w-2xl">
+        Four bodies of work from my time as Remote Sensing Officer. Photos and case-study links are
+        placeholders — swap them for real tiles and write-ups.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Project 1 -->
+        <article class="reveal card rounded overflow-hidden flex flex-col">
+          <div class="img-placeholder aspect-[16/10] relative overflow-hidden">
+            <span class="absolute top-3 left-3 tag z-10">KAJIADO COUNTY, KE</span>
+            <img class="ph-photo" src="assets/images/projects/coffee-geomapping.jpg" alt="National Coffee Geomapping project"
+                 loading="lazy" onload="this.parentElement.classList.add('has-photo')" onerror="this.style.display='none'">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="mb-2 ph-icon">
+              <rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/>
+            </svg>
+            <p class="font-mono text-[11px] uppercase tracking-wide ph-icon">Add project image</p>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="font-mono text-[11px] text-[var(--text-dim)] uppercase tracking-wide mb-2">Mar — Dec 2025 · GIS Expert &amp; County Lead</p>
+            <h3 class="font-display text-lg font-semibold mb-3">National Coffee Geomapping</h3>
+            <p class="text-sm text-[var(--text-dim)] leading-relaxed mb-4 flex-1">
+              Translated EU Deforestation Regulation requirements into technical specifications for
+              county-level geospatial data collection, processing and output validation. Documented boundary
+              ambiguities, classification conflicts and projection mismatches, and proposed field-validated
+              solutions with national GIS teams and policy stakeholders.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="tag">EUDR Compliance</span><span class="tag">Spec Writing</span><span class="tag">Edge Cases</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1.5 text-sm font-mono text-[var(--veg)] hover:gap-2.5 transition-all">
+              View case study <span>↗</span>
+            </a>
+            <!-- TODO: replace with a link to the case study or a hosted map/story -->
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="reveal card rounded overflow-hidden flex flex-col">
+          <div class="img-placeholder aspect-[16/10] relative overflow-hidden">
+            <span class="absolute top-3 left-3 tag z-10">REMOTE SENSING · AGRICULTURE</span>
+            <img class="ph-photo" src="assets/images/projects/crop-monitoring.jpg" alt="Agricultural Crop Monitoring project"
+                 loading="lazy" onload="this.parentElement.classList.add('has-photo')" onerror="this.style.display='none'">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="mb-2 ph-icon">
+              <rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/>
+            </svg>
+            <p class="font-mono text-[11px] uppercase tracking-wide ph-icon">Add project image</p>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="font-mono text-[11px] text-[var(--text-dim)] uppercase tracking-wide mb-2">Jul 2023 — Present · Remote Sensing Team Lead</p>
+            <h3 class="font-display text-lg font-semibold mb-3">Agricultural Crop Monitoring</h3>
+            <p class="text-sm text-[var(--text-dim)] leading-relaxed mb-4 flex-1">
+              Defined technical specifications for satellite data acquisition, preprocessing pipelines and
+              output quality standards, translating agronomic requirements into geospatial workflows.
+              Evaluates emerging EO methods and maintains documentation of processing decisions for
+              reproducibility.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="tag">EO Pipelines</span><span class="tag">Crop Monitoring</span><span class="tag">Reproducibility</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1.5 text-sm font-mono text-[var(--veg)] hover:gap-2.5 transition-all">
+              View case study <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="reveal card rounded overflow-hidden flex flex-col">
+          <div class="img-placeholder aspect-[16/10] relative overflow-hidden">
+            <span class="absolute top-3 left-3 tag z-10">HYDROLOGY · KENYA</span>
+            <img class="ph-photo" src="assets/images/projects/flood-risk.jpg" alt="Flood Risk Analysis project"
+                 loading="lazy" onload="this.parentElement.classList.add('has-photo')" onerror="this.style.display='none'">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="mb-2 ph-icon">
+              <rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/>
+            </svg>
+            <p class="font-mono text-[11px] uppercase tracking-wide ph-icon">Add project image</p>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="font-mono text-[11px] text-[var(--text-dim)] uppercase tracking-wide mb-2">Mar 2022 — Dec 2023 · Technical Lead</p>
+            <h3 class="font-display text-lg font-semibold mb-3">Flood Risk Analysis</h3>
+            <p class="text-sm text-[var(--text-dim)] leading-relaxed mb-4 flex-1">
+              Led the design and documentation of geospatial analysis specifications for flood risk
+              modelling — data standards, spatial resolution requirements and output formats for
+              multi-stakeholder use. Translated findings into reports for both engineering teams and
+              non-technical policy audiences.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="tag">Flood Modelling</span><span class="tag">Data Standards</span><span class="tag">Reporting</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1.5 text-sm font-mono text-[var(--veg)] hover:gap-2.5 transition-all">
+              View case study <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="reveal card rounded overflow-hidden flex flex-col">
+          <div class="img-placeholder aspect-[16/10] relative overflow-hidden">
+            <span class="absolute top-3 left-3 tag z-10">SPACE POLICY · NATIONAL</span>
+            <img class="ph-photo" src="assets/images/projects/space-innovation.jpg" alt="Space Innovation Roadmap project"
+                 loading="lazy" onload="this.parentElement.classList.add('has-photo')" onerror="this.style.display='none'">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="mb-2 ph-icon">
+              <rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/>
+            </svg>
+            <p class="font-mono text-[11px] uppercase tracking-wide ph-icon">Add project image</p>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="font-mono text-[11px] text-[var(--text-dim)] uppercase tracking-wide mb-2">May 2024 — Present · Technical Analyst</p>
+            <h3 class="font-display text-lg font-semibold mb-3">Space Innovation Roadmap</h3>
+            <p class="text-sm text-[var(--text-dim)] leading-relaxed mb-4 flex-1">
+              Researches emerging technologies and methodologies in the space and geospatial sector to
+              inform the Kenya Space Innovation Roadmap, translating stakeholder requirements into
+              structured technical documentation across engineering, product and policy functions.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="tag">Foresight Research</span><span class="tag">Policy</span><span class="tag">Documentation</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-1.5 text-sm font-mono text-[var(--veg)] hover:gap-2.5 transition-all">
+              View case study <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="relative py-24 md:py-32 border-t border-[var(--line)] overflow-hidden">
+    <div class="absolute inset-0 grid-overlay opacity-60"></div>
+    <div class="relative max-w-6xl mx-auto px-5 md:px-8 text-center">
+      <p class="reveal eyebrow font-mono text-xs text-[var(--text-dim)] uppercase mb-4 justify-center">
+        <span class="dot" style="background:var(--water)"></span> Contact
+      </p>
+      <h2 class="reveal font-display text-3xl md:text-5xl font-semibold max-w-2xl mx-auto">
+        Let's talk mapping, missions &amp; specifications.
+      </h2>
+      <p class="reveal text-[var(--text-dim)] mt-5 max-w-xl mx-auto">
+        Open to geospatial engineering, remote sensing and technical specification work.
+      </p>
+
+      <div class="reveal flex flex-wrap justify-center gap-4 mt-10 font-mono text-sm">
+        <a href="mailto:esmainaa8@gmail.com" class="btn-ghost px-5 py-3 rounded flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          esmainaa8@gmail.com
+        </a>
+        
+        <a href="https://linkedin.com/in/esther-maina-2b3b1a129" target="_blank" rel="noopener" class="btn-ghost px-5 py-3 rounded flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="11" x2="8" y2="16"/><circle cx="8" cy="8" r="0.5" fill="currentColor"/><path d="M12 16v-3a2 2 0 0 1 4 0v3"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/EstherWMaina" target="_blank" rel="noopener" class="btn-ghost px-5 py-3 rounded flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-[var(--line)] py-8">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs text-[var(--text-dim)]">
+    <p>© <span id="year"></span> Esther Wanjiku Maina</p>
+    <p class="flex items-center gap-2">
+      <span class="dot inline-block w-1.5 h-1.5 rounded-sm" style="background:var(--veg)"></span>
+      Built with HTML, Tailwind &amp; a bit of topography
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const setActive = () => {
+    let current = '';
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom >= 120) current = sec.id;
+    });
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === '#' + current);
+    });
+  };
+  document.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+</script>
+
+</body>
+</html>
